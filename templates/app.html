@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/static/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/assets/libs/css/style.css">
+    <link rel="stylesheet" href="/static/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="/static/assets/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="/static/assets/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" href="/static/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/static/assets/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="/static/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <link rel="stylesheet" href="/static/assets/libs/css/mdb.min.css" >
+    <link rel="stylesheet" href="/static/assets/libs/css/animate-3.7.0.css">
+    <link rel="stylesheet" href="/static/assets/libs/css/owl-carousel.min.css">
+    <link rel="stylesheet" href="/static/assets/libs/css/mdb.min.css">
+    <link rel="stylesheet" href="/static/assets/libs/css/all.css">
+    <link rel="stylesheet" href="/static/assets/libs/css/app.css">
+    <title>Car Price Prediction</title>
+</head>
+<body background ="{% static 'assets/images/asd.jpg' %}" style="background-attachment: fixed; background-size: cover; background-repeat: no-repeat;background-position: center center">
+
+
+<form class="form" action="{% url 'CalculatePrice' %}" method="post">
+ {% csrf_token %}
+     <div class="modal-body">
+    <h2 style="color:floralwhite">Car Brand</h2>
+    <input class="area"  type="text" id="uicar_brand" class="floatLabel" name="car_brand" value="bmw">
+	<h2 style="color:floralwhite">Wheel Base</h2>
+    <input class="area"  type="number" id="uiwheel_base" class="floatLabel" name="wheel_base" value="70.5">
+	<h2 style="color:floralwhite">Length</h2>
+    <input class="area"  type="number" id="uilength" class="floatLabel" name="length" value="192.7">
+	<h2 style="color:floralwhite">Width</h2>
+    <input class="area"  type="number" id="uiwidth" class="floatLabel" name="width" value="71.4">
+	<h2 style="color:floralwhite">Height</h2>
+    <input class="area"  type="number" id="uiheight" class="floatLabel" name="height" value="54.3">
+	<h2 style="color:floralwhite">Curb Weight</h2>
+    <input class="area"  type="number" id="uicurb_weight" class="floatLabel" name="curb_weight" value="2844">
+	<h2 style="color:floralwhite">No. of Cylinders</h2>
+    <input class="area"  type="number" id="uinumberofcylinder" class="floatLabel" name="num_of_cylinders" value="4">
+	<h2 style="color:floralwhite">Horsepower</h2>
+    <input class="area"  type="number" id="uihorsepower" class="floatLabel" name="horsepower" value="300">
+	<h2 style="color:floralwhite">Peak Rpm</h2>
+    <input class="area"  type="number" id="uipeekrpm" class="floatLabel" name="peak_rpm" value="7500">
+	<h2 style="color:floralwhite">City Milage</h2>
+    <input class="area"  type="number" id="uicity_L" class="floatLabel" name="city_L" value="15.03">
+	<h2 style="color:floralwhite">Highway Milage</h2>
+    <input class="area"  type="number" id="uihigh_way_L" class="floatLabel" name="high_way_L" value="12.10">
+
+
+
+	<h2 style="color:floralwhite">Fuel Type</h2>
+	<div class="switch-field">
+		<input type="radio" id="radio-fuel-1" name="uifuel" value="gas"/>
+		<label for="radio-fuel-1">gas</label>
+		<input type="radio" id="radio-fuel-2" name="uifuel" value="diesel" checked/>
+		<label for="radio-fuel-2">diesel</label>
+	</div>
+
+	<h2 style="color:floralwhite">Aspiration</h2>
+	<div class="switch-field">
+		<input type="radio" id="radio-asp-1" name="uiasp" value="std"/>
+		<label for="radio-asp-1">std</label>
+		<input type="radio" id="radio-asp-2" name="uiasp" value="turbo" checked/>
+		<label for="radio-asp-2">turbo</label>
+	</div>
+
+	<h2 style="color:floralwhite">Number of Doors</h2>
+	<div class="switch-field">
+		<input type="radio" id="radio-nod-1" name="uinod" value="2"/>
+		<label for="radio-nod-1">2</label>
+		<input type="radio" id="radio-nod-2" name="uinod" value="4" checked/>
+		<label for="radio-nod-2">4</label>
+	</div>
+
+	<h2 style="color:floralwhite">Drivetrain</h2>
+	<div class="switch-field">
+		<input type="radio" id="radio-dt-1" name="uidt" value="fwd"/>
+		<label for="radio-dt-1">fwd</label>
+		<input type="radio" id="radio-dt-2" name="uidt" value="4wd" checked/>
+		<label for="radio-dt-2">4wd</label>
+		<input type="radio" id="radio-dt-3" name="uidt" value="rwd" checked/>
+		<label for="radio-dt-3">rwd</label>
+	</div>
+
+    <h2 style="color:floralwhite">Body Style</h2>
+    <input class="area"  type="text" id="uicar_brand" class="floatLabel" name="body_style" value="sedan">
+
+     <h2 style="color:floralwhite">Engine Type</h2>
+    <input class="area"  type="text" id="uiengine_type" class="floatLabel" name="Engine_Type" value="dohc">
+
+     <h2 style="color:floralwhite">Fuel System</h2>
+    <input class="area"  type="text" id="uiFuel_System" class="floatLabel" name="Fuel_System" value="mpfi">
+
+	<input type="submit" class="btn btn-outline-success btn-rounded waves-effect" value="Estimate Price">
+         </div>
+	</form>
+
+
+</body>
+</html>
