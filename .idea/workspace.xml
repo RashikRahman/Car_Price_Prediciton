@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9faac525-053a-418b-b5aa-385d86205ddc" name="Default Changelist" comment="" />
+    <list default="true" id="9faac525-053a-418b-b5aa-385d86205ddc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +16,9 @@
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="af5dca06-60c8-4091-aee5-7ad161eb4a09" />
   <component name="ProjectId" id="1bECi5OXvgymQpCy09tFPM3DHqD" />
@@ -82,6 +87,7 @@
       <updated>1588187989735</updated>
       <workItem from="1588187991386" duration="2005000" />
       <workItem from="1588191063416" duration="5472000" />
+      <workItem from="1592862237754" duration="216000" />
     </task>
     <servers />
   </component>
